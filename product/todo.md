@@ -17,7 +17,7 @@ Working scratch pad. Not a formal doc. Keep it pruned -- move resolved items to 
 ## Next Steps
 *Immediate actions with owners.*
 
-- [ ] Erik: Validate re-ranking approach (Elasticsearch post-query re-ranking vs. alternatives) -- Phase 1 spike
+- [x] Erik: Validate re-ranking approach (Elasticsearch post-query re-ranking vs. alternatives) -- Phase 1 spike *(resolved: cooking-rose with custom query templates, 2026-05-06)*
 - [ ] Raquel: Run historical data analysis to determine minimum signal threshold -- Phase 1 spike
 - [ ] Sora: Confirm experiment platform supports user-level bucketing -- Phase 1 spike
 - [ ] Gaelle: Schedule legal review for save-history usage -- Before Phase 2

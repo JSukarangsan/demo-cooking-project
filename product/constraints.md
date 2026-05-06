@@ -45,6 +45,9 @@ These are specific to this project. Populated from the intake interview.
 - Can't degrade search latency -- current p95 is 200ms, can't exceed 300ms
 - Must confirm whether search data comes from Cooking Subgraph (GraphQL) or legacy REST before building
 - Statsig experimentation infrastructure for Cooking Search is ready (CAPI-248 complete)
+- **cooking-rose filter cap:** Max ~50 filters per query. Current collections approach uses 8-12 (safe headroom). Do not let scope creep push past 30 — performance degrades beyond that. *(Source: Erik Hinton, 2026-05-06)*
+- **Ingredient matching is English-only.** Multilingual tokenization is a separate body of work, Q3 earliest per Raquel. *(Source: Erik Hinton, 2026-05-06)*
+- **cooking-rose API rate limit: 200 req/sec.** Web allocation is fine. If Osvaldo's apps team wants access to the collections API, they need their own rate limit allocation — do not share ours. *(Source: Erik Hinton, 2026-05-06)*
 
 ### Legal & Compliance
 - Need legal review before using save history to affect search rankings
