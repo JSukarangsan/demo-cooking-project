@@ -1,0 +1,74 @@
+# Constraints -- Cooking Search Personalization
+
+Hard limits the project must work within. If something here becomes negotiable, move it to decisions.md with rationale.
+
+---
+
+## Mission-Level Constraints
+
+These apply to all projects in the Cooking mission. Pre-populated from mission context.
+
+### Technical
+
+- **GraphQL migration is in progress.** Some data comes from subgraph, some from legacy REST. Ask which source a feature needs.
+- **Recipe data model changes are expensive.** New fields require API changes, client updates, and data migrations.
+- **Experiment infrastructure required.** All metric-moving features must run through Statsig with holdback and ramp.
+- **Platform parity is not automatic.** A feature on web may take additional quarters for iOS/Android. Scope explicitly.
+- **Pantry design system required.** All UI must use Pantry (Cooking) and TPL (shared NYT). No custom one-offs.
+- **Performance budget is real.** Crash-free session rate >99.7%. "Thanksgiving Ready" is the reliability bar.
+- **Auth/subscription is shared infrastructure.** Login, subscription status, and paywall logic are owned by NYT shared platform.
+- **Search index takes hours.** Cooking-rose ingests 80M+ articles. Index time is ~9 hours. Changes to search logic need careful release planning.
+
+### Design
+
+- All UI must use Pantry (Cooking-specific) and TPL (shared NYT) design systems.
+- 100% AA accessibility compliance target for mobile features by end of 2026.
+- VQA/DQA (Visual/Design Quality Assurance) is required before launch.
+
+### Guardrail Metrics
+
+| Guardrail | Context |
+|---|---|
+| Starts / conversion efficiency | Cannot let cost-per-start degrade |
+| Platform stability / uptime | Crash-free session rate >99.7%. "Thanksgiving Ready" bar. |
+| Recipe quality | Tested recipes are a core differentiator. Never trade quality for speed. |
+| Holiday search traffic | Q4 search dip in 2024 was a warning. Must mitigate further erosion. |
+| Newsletter traffic | Declined due to Google unsub issue. Being fixed with unique sender addresses. |
+
+---
+
+## Project-Level Constraints
+
+These are specific to this project. Populated from the intake interview.
+
+### Technical
+- Can't degrade search latency -- current p95 is 200ms, can't exceed 300ms
+- Must confirm whether search data comes from Cooking Subgraph (GraphQL) or legacy REST before building
+- Statsig experimentation infrastructure for Cooking Search is ready (CAPI-248 complete)
+
+### Legal & Compliance
+- Need legal review before using save history to affect search rankings
+- Privacy implications of using behavioral data for personalization TBD
+
+### Business
+- Web only for MVP -- cross-platform personalization is explicitly out of scope
+- Editorial recipe visibility cannot drop more than 10% in impressions (guardrail)
+- Content diversity must be maintained -- no single-cuisine filter bubbles
+
+### Design
+- Must use Pantry components for any UI changes
+- Visible vs. invisible personalization is an open product decision
+- Design work blocked until minimum signal threshold is determined by Data
+
+### Dependencies (Blocking)
+
+| Dependency | Owner | Status |
+|---|---|---|
+| User vectors (real-time) | Raquel Hamias / ML infrastructure team | Not yet built |
+| User-level bucketing in experiment platform | Sora Kim / Experiment platform team | Checking feasibility |
+| Legal privacy review of save-history usage | Gaelle Sharma / Legal | Not yet started |
+| Minimum signal threshold analysis | Raquel Hamias | In progress |
+
+---
+
+*Update as new constraints are discovered. Date each entry.*
