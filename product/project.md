@@ -23,6 +23,7 @@ Search results on NYT Cooking are the same for every user regardless of their co
 - Users already try longer queries on Cooking -- signaling readiness for smarter search
 - User feedback: geographic/seasonal mismatch ("You show me results according to your climate in the north hemisphere, but I live in Brazil")
 - Personalization described as "table stakes" in Jan 2026 product review -- same ranking algorithm applied to all users today
+- **40% of search exits happen on the results page** -- users see results but don't click. Biggest drop-off in the search funnel. (Source: Priya Sharma / DIG, Q1 2026 search funnel analysis)
 
 **Prior work:**
 
@@ -107,6 +108,7 @@ Search results on NYT Cooking are the same for every user regardless of their co
 | Lauren Savoie (Editorial lead)        | Editorial recipe visibility impact                               |
 | Legal                                 | Privacy review of save-history usage                             |
 | Accessibility                         | Any new UI patterns (AA compliance)                              |
+| Priya Sharma (Data Analyst, Cooking DIG) | Metric definitions, baselines, Looker dashboard ("Cooking Search Performance"), experiment data |
 
 
 ### Decision Maker
@@ -153,16 +155,19 @@ Gaelle Sharma for product decisions. Michael Linares for anything that changes t
 
 **North Star:** Search-driven recipe save rate -- the percentage of searches that result in a recipe save within the same session.
 
+> **Metric alignment note:** Priya Sharma (DIG) provided official Looker definitions that differ from project-level definitions. See `insights/CLAUDE.md` for both. When reporting, specify which definition is in use.
 
-| Metric                                 | Type    | Baseline | Target                             | Timeframe               |
-| -------------------------------------- | ------- | -------- | ---------------------------------- | ----------------------- |
-| Search-driven recipe save rate         | Primary | TBD      | TBD (experiment will establish)    | Per session             |
-| Search result CTR                      | Leading | TBD      | Increase                           | Per session             |
-| Position of clicked result             | Leading | TBD      | Higher (users click closer to top) | Per session             |
-| Search sessions per user               | Leading | TBD      | Increase                           | Weekly                  |
-| 90-day retention (personalized cohort) | Lagging | TBD      | +5pp vs. control                   | 90 days post-experiment |
-| Recipe saves per subscriber per month  | Lagging | TBD      | Increase                           | Monthly                 |
-| Search abandonment rate                | Lagging | TBD      | Decrease                           | Per session             |
+| Metric | Type | Baseline | Target | Timeframe |
+| --- | --- | --- | --- | --- |
+| Search-driven recipe save rate (project North Star: saves per search session) | Primary | TBD | TBD (experiment will establish) | Per session |
+| Recipe Save Rate (Looker: saves from search / unique recipe views from search) | Primary | 8.2% overall; **7.9% Q2 2025** (use Q2 for Q2 comparison, not Q4 11.1%) | Increase | Per session |
+| Search Success Rate (Looker: sessions with ≥1 recipe click / total search sessions) | Leading | **34%** (industry benchmark: 45-55%) | Increase toward benchmark | Per session |
+| Collection Click-Through Rate (new metric — no baseline yet; instrumentation needed) | Leading | TBD — needs tagging spec from eng (sprint 1) | Increase | Per impression |
+| Position of clicked result | Leading | TBD | Higher (users click closer to top) | Per session |
+| Search sessions per user | Leading | TBD | Increase | Weekly |
+| 90-day retention (personalized cohort) | Lagging | TBD | +5pp vs. control | 90 days post-experiment |
+| Recipe saves per subscriber per month | Lagging | TBD | Increase | Monthly |
+| Search abandonment rate | Lagging | TBD | Decrease | Per session |
 
 
 **Guardrail metrics:**

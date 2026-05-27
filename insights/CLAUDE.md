@@ -6,11 +6,23 @@ Insights artifacts for **Cooking Search Personalization**.
 
 ## Metric Definitions
 
+> **Note:** Two sets of definitions in play — project-level (internal alignment) and Looker official (from Priya Sharma, DIG, 2026-05-27). Use Looker definitions when reporting externally; project definitions for internal North Star tracking. Always specify which is in use.
+
+### Project-Level Definitions
+
 | Metric | Definition | Used by |
 |---|---|---|
 | **Cook Rate** | Recipe is "cooked" if >5 min of total active time per day on that recipe. Measured per session, per day, and per week. | Search & Personalization bet |
 | **Search Success** | Composite: Result CTR (relevance) + Engagement Rate (quality) + Search Volume (usage) | Search & Personalization bet |
 | **Search-driven recipe save rate** | % of searches that result in a recipe save within the same session | This project's North Star |
+
+### Looker Official Definitions (Source: Priya Sharma, DIG — "Cooking Search Performance" dashboard)
+
+| Metric | Definition | Baseline | Notes |
+|---|---|---|---|
+| **Search Success Rate** | Sessions with ≥1 recipe click after search / total search sessions | **34%** | Industry benchmark: 45-55%. We are significantly below. |
+| **Recipe Save Rate** | Recipe saves from search / unique recipe views from search | **8.2%** (Q2 2025: **7.9%**) | Excludes logged-out users (~22% of search traffic). Use Q2 2025 baseline for Q2 comparisons — Q4 (11.1%) reflects holiday seasonality spike. |
+| **Collection Click-Through Rate** | Clicks on curated collection / impressions of collection module | No baseline yet | New metric — instrumentation needed. Tagging spec required from eng by end of sprint 1. |
 
 ---
 
@@ -18,6 +30,7 @@ Insights artifacts for **Cooking Search Personalization**.
 
 | Dashboard | Location | Owner |
 |---|---|---|
+| **Cooking Search Performance** | Looker (internal) | Priya Sharma (DIG) — primary source for Search Success Rate, Recipe Save Rate, Collection CTR |
 | Cooking Productivity Metrics | [Jira Dashboard #12770](https://nytimes.atlassian.net/jira/dashboards/12770) | Kyle Oye |
 | Cooking Web Team Metrics 2026 | [Jira Dashboard #14601](https://nytimes.atlassian.net/jira/dashboards/14601) | Subathra Thanabalan |
 | Internal Search Dashboard | [Mode Report](https://app.mode.com/nytimes/reports/c848f0825c41) | Discovery team |
@@ -55,6 +68,13 @@ Insights artifacts for **Cooking Search Personalization**.
 - Users already try longer search queries on Cooking -- signaling readiness for smarter search
 - Core Cooking strengths vs. LLM tools: trusted recipes, social proof, imagery, memory, guided cooking
 - New search filters launched Dec 2025: "5 Ingredients", "Great Leftovers", Equipment filters
+- **40% of search exits happen on the results page** -- users see results but don't click. Biggest drop-off in the funnel. Collections may help address this. (Source: Priya Sharma / DIG, Q1 2026 search funnel analysis)
+
+### Prior Experiments
+
+| Experiment ID | Description | Result | Implication |
+|---|---|---|---|
+| COOK-2025-Q4-017 | Trending recipes in search results | +6% Search Success Rate, **-3% Recipe Save Rate** | Trending recipes attracted casual browsers, not serious cooks — people browsed more but saved less. Relevant to collections positioning: optimize for saves, not just clicks. |
 
 ### Conversion & Growth
 - Non-subscribing Cooking users are less interested in other NYT products -- Cooking-specific value matters most
