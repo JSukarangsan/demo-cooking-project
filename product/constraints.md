@@ -62,6 +62,7 @@ These are specific to this project. Populated from the intake interview.
 - Must use Pantry components for any UI changes
 - Visible vs. invisible personalization is an open product decision
 - Design work blocked until minimum signal threshold is determined by Data
+- **Max 2 type weights per screen.** Brand guidelines prohibit 3+ type weights on a single screen (e.g., regular + medium + bold). Search results page already corrected in design mocks. Do not reintroduce a third weight in any screen. *(Source: Michelle Park, brand review, 2026-05-27)*
 
 ### Dependencies (Blocking)
 

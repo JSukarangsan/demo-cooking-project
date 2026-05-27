@@ -11,6 +11,7 @@ Working scratch pad. Not a formal doc. Keep it pruned -- move resolved items to 
 - [ ] What's the minimum signal threshold for meaningful personalization? -- Owner: Raquel Hamias -- By: Mid-April 2026
 - [ ] Does Legal have concerns about save-history-based ranking? -- Owner: Gaelle Sharma -- By: End of April 2026
 - [ ] Should personalization be visible or invisible to users? -- Owner: Gaelle Sharma + Michelle Chiu -- By: Before Phase 2 (May)
+- [ ] Does "no results found" empty state need a new illustration, or can it use the existing cooking illustration set? -- Owner: Michelle Park -- By: 2026-05-29 (Thursday) *(2-week lead time from illustration team if new one needed)*
 - [ ] Does Lauren Savoie have concerns about editorial recipe visibility? -- Owner: Gaelle Sharma -- By: Before Phase 2 (May)
 - [ ] Which data source for search: Cooking Subgraph (GraphQL) or legacy REST? -- Owner: Erik Jonsson -- By: Phase 1 spike
 
