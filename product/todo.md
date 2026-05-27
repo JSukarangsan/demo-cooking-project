@@ -14,6 +14,7 @@ Working scratch pad. Not a formal doc. Keep it pruned -- move resolved items to 
 - [ ] Does "no results found" empty state need a new illustration, or can it use the existing cooking illustration set? -- Owner: Michelle Park -- By: 2026-05-29 (Thursday) *(2-week lead time from illustration team if new one needed)*
 - [ ] Does Lauren Savoie have concerns about editorial recipe visibility? -- Owner: Gaelle Sharma -- By: Before Phase 2 (May)
 - [ ] Which data source for search: Cooking Subgraph (GraphQL) or legacy REST? -- Owner: Erik Jonsson -- By: Phase 1 spike
+- [ ] Do we need subscription tier segmentation (free vs. subscriber) for launch metrics? **2-week lead time from Priya's team — must decide now.** -- Owner: Gaelle Sharma -- By: ASAP
 
 ## Next Steps
 *Immediate actions with owners.*
@@ -24,6 +25,9 @@ Working scratch pad. Not a formal doc. Keep it pruned -- move resolved items to 
 - [ ] Gaelle: Schedule legal review for save-history usage -- Before Phase 2
 - [ ] Gaelle: Schedule alignment with Lauren Savoie on editorial visibility -- Before Phase 2
 - [ ] Michelle: Explore visible vs. invisible personalization UX directions -- After signal threshold is determined
+- [ ] Erik: Deliver tagging spec for Collection Click-Through Rate instrumentation -- By end of sprint 1 *(needed to establish baseline for new metric; requested by Priya Sharma, DIG)*
+- [ ] Gaelle: Decide whether subscription tier cut is needed for launch metrics and notify Priya Sharma -- ASAP *(2-week lead time; see constraints.md)*
+- [ ] Gaelle: Invite Priya Sharma (DIG) to metrics review when setting targets
 
 ## Instrumentation Gaps
 *Data we need but don't have yet.*

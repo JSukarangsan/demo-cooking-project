@@ -49,6 +49,11 @@ These are specific to this project. Populated from the intake interview.
 - **Ingredient matching is English-only.** Multilingual tokenization is a separate body of work, Q3 earliest per Raquel. *(Source: Erik Hinton, 2026-05-06)*
 - **cooking-rose API rate limit: 200 req/sec.** Web allocation is fine. If Osvaldo's apps team wants access to the collections API, they need their own rate limit allocation — do not share ours. *(Source: Erik Hinton, 2026-05-06)*
 
+### Measurement
+- **Recipe Save Rate excludes logged-out users.** ~22% of search traffic is logged-out; saves cannot be tracked for them. All save rate baselines and targets reflect logged-in users only. *(Source: Priya Sharma, DIG, 2026-05-27)*
+- **Looker cannot segment by subscription tier (free vs. subscriber).** Adding that dimension requires a 2-week lead time from Priya's team. If tier segmentation is needed for launch metrics, the request must go out immediately. *(Source: Priya Sharma, DIG, 2026-05-27)*
+- **Use Q2 2025 baseline (7.9%) for Recipe Save Rate comparisons, not Q4 (11.1%).** Q4 has a known holiday seasonality spike (Nov-Dec). We are measuring impact in Q2. *(Source: Priya Sharma, DIG, 2026-05-27)*
+
 ### Legal & Compliance
 - Need legal review before using save history to affect search rankings
 - Privacy implications of using behavioral data for personalization TBD
