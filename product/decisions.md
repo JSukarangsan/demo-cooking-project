@@ -37,4 +37,18 @@ Log a decision when: scope changes, a technical approach is chosen, a user need 
 
 ---
 
+## Use Pantry carousel component for collections feature (no custom carousel)
+
+- **Status:** open
+- **Date:** 2026-05-27
+- **Decision maker:** Michelle Park (Senior Product Designer)
+- **Decision:** Use the Pantry recipe card carousel component for the collections feature. Do not spec a custom carousel. Component is in the Pantry sticker sheet under "Content Surfaces" (shipped in Pantry 4.2).
+- **Why:** Pantry 4.2 ships a recipe card carousel with horizontal scroll, lazy loading, and standard save/unsave — it covers the need. Custom components add build cost and diverge from the design system.
+- **Alternatives considered:** Custom carousel — ruled out.
+- **Impact:** Unblocks collections UI work. Reduces engineering scope.
+- **Source:** Michelle Park, Slack DM, 2026-05-27
+- **Tags:** design, collections, pantry, UI
+
+---
+
 <!-- ADD NEW DECISIONS ABOVE THIS LINE -->
